@@ -13,7 +13,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-    font-family: 'Roboto', sans-serif;
+    font-family: Raleway, sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
@@ -1419,7 +1419,7 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Raleway, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
     color: #888888;
@@ -7992,7 +7992,7 @@ button.close {
     position: absolute;
     z-index: 1070;
     display: block;
-    font-family: 'Roboto', sans-serif;
+    font-family: Raleway, sans-serif;
     font-style: normal;
     font-weight: normal;
     letter-spacing: normal;
@@ -8126,7 +8126,7 @@ button.close {
     display: none;
     max-width: 276px;
     padding: 1px;
-    font-family: 'Roboto', sans-serif;
+    font-family: Raleway, sans-serif;
     font-style: normal;
     font-weight: normal;
     letter-spacing: normal;
@@ -9567,14 +9567,14 @@ a.list-group-item-danger.active {
     color: #62AB19;
     letter-spacing: 2px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: Raleway, sans-serif;
 }
 
 .nombre_ranking {
     text-align: center;
     line-height: 30px;
     font-weight: 700;
-    font-family: 'Roboto', sans-serif;
+    font-family: Raleway, sans-serif;
     font-size: 21px;
     color: #5E5E5E;
 }
@@ -9587,7 +9587,7 @@ a.list-group-item-danger.active {
     color: #43730F;
     letter-spacing: 2px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: Raleway, sans-serif;
     background: url(Images/podium.png) no-repeat center;
     background-size: contain;
     width: 30%;
@@ -9864,7 +9864,7 @@ td {
     font-size: 15px;
     border: none;
     font-weight: 300;
-    font-family: 'Roboto', sans-serif;
+    font-family: Raleway, sans-serif;
     margin-bottom: 30px;
 }
 
@@ -12325,7 +12325,7 @@ li {
 
 .modal-body {
     font-size: 15px;
-    font-family: 'Roboto', sans-serif;
+    font-family: Raleway, sans-serif;
     color: black;
 }
 

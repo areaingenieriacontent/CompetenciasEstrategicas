@@ -3266,7 +3266,7 @@ namespace SCORM1.Controllers
 <h3 ALIGN='center' style='font-family:Arial Black, Gadget, sans-serif; font-size: 40px;color:#000;'><strong>" + cert.ApplicationUser.FirstName + @" " + cert.ApplicationUser.LastName + @"</strong></h3>
 < h5 ALIGN='center'style='font-family:Arial Black, Gadget, sans-serif;color:#000;' >Identificado(a) con cédula número " + cert.ApplicationUser.Document + @" </ h5 >
 < H5 ALIGN='center'style='font-family:Arial Black, Gadget, sans-serif;color:#000;'> Por haber aprobado el curso virtual de:</H5>
-< H3 ALIGN='center'style='font-family:Arial Black, Gadget, sans-serif; font-size: 50px;color:#822433;' > RUTAS DE ACCESO DE LOS SERVICIOS DE SALUD </H3>
+< H3 ALIGN='center'style='font-family:Arial Black, Gadget, sans-serif; font-size: 50px;color:#c91f2d;' > RUTAS DE ACCESO DE LOS SERVICIOS DE SALUD </H3>
 <h5 ALIGN='center'style='font-family:Arial Black, Gadget, sans-serif;color:#000;'>En testimonio de lo anterior ,se firma en Bogotá a los " + DateTime.Now + @"</h5>
 <br></br>
 <div ALIGN='center' >

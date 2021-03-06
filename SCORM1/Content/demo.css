@@ -11,7 +11,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 body{
 
     background-size: cover;
-    font-family: 'Roboto', sans-serif;
+    font-family: Raleway, sans-serif;
     letter-spacing:-0.2px;
     margin: 0;
     background-color: #fff;
@@ -565,7 +565,7 @@ button[type=info-premios]{
 }
 
 .title{
-    font-family: 'Roboto Slab', serif;
+    font-family: Raleway, serif;
     letter-spacing:-0.5px;
 	background: #c91f2d;
 	background-size:cover;
