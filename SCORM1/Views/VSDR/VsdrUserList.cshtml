@@ -1,0 +1,38 @@
+﻿@using SCORM1.Models.VSDR;
+@using SCORM1.Models.ViewModel;
+@model VsdrUserVM
+
+@{
+    ViewBag.Title = "Lista de VSDR";
+}
+
+<h2>VSDR disponibles</h2>
+
+<br />
+<br />
+<br />
+<br />
+<div class="row fecha">
+    <div class="btn-group btn-breadcrumb">
+        <a href="@Url.Action("Index", "Home")" class="btn btn-info"><i class="glyphicon glyphicon-home"></i></a>
+        @*<a href="@Url.Action(" Result", "Ratings" , new {id=Model.Enrollment.Modu_Id})" class="btn btn-info" stye="margin-left:-5em">Calificaciones</a> *@
+        <a href="@Url.Action("Index", "Home")" class="btn btn-info" stye="margin-left:-5em">Inicio</a>
+    </div>
+</div>
+@if (Model.listOfVsdr.Count > 0)
+{
+    for (int i = 0; i < Model.listOfVsdr.Count; i++)
+    {
+        <div>
+            <hr style="border:1px solid #ff6a00;" />
+            @Html.HiddenFor(modelItem => Model.listOfVsdr[i].id)
+            <h2>@Html.DisplayFor(modelItem => Model.listOfVsdr[i].name)</h2>
+            @Html.ActionLink("Ingresar", "VsdrContent", "VSDR", new { id = Model.listOfVsdr[i].id }, new { @class = "btn btn-primary" })
+            <hr style="border:1px solid #ff6a00;" />
+        </div>
+    }
+}
+
+<br />
+<br />
+<br />

@@ -1,0 +1,150 @@
+﻿@using SCORM1.Models.VSDR;
+@using SCORM1.Models.ViewModel;
+@model VsdrUserVM
+@{
+    ViewBag.Title = "VsdrContent";
+}
+
+<h2>@Model.actualVsdr.name</h2>
+<br />
+<br />
+<br />
+<br />
+<div class="row fecha">
+    <div class="btn-group btn-breadcrumb">
+        <a href="@Url.Action("Index", "Home")" class="btn btn-info"><i class="glyphicon glyphicon-home"></i></a>
+        <a href="@Url.Action("VsdrUserList", "VSDR")" class="btn btn-info">Lista VSDR</a>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:brown; border-width:3px">
+    <br />
+    <p><strong>@Html.Raw(Model.actualVsdr.case_content)</strong></p>
+    <br />
+    <div class="fecha" style="text-align:center">
+        <button id="BTN_ADD" type="button" class="btn btn-default" data-toggle="modal" data-target="#AddVSDRFile">Añadir Archivo</button>
+        @if (Model.meetingAvailable)
+        {
+            @Html.ActionLink("Ir a la sala", "RedirectToUrl", "VSDR", new { id = @Model.actualVsdr.id }, new { @class = "btn btn-primary", style = "margin: 10px" })
+        }
+        else
+        {
+            @Html.ActionLink("Ir a la sala", "RedirectToUrl", "VSDR", new { id = @Model.actualVsdr.id }, new { @class = "btn btn-primary disabled", style = "margin:10px" })
+        }
+    </div>
+    <br />
+    <br />
+    <div class="panel panel-primary" style="border-color:brown; border-width:1px">
+        <h3>Aportes</h3>
+        @if (Model.listOfIssuedFiles.Count > 0)
+        {
+            <div>
+                @for (int cont = 0; cont < Model.listOfIssuedFiles.Count; cont++)
+                {
+                    <br />
+                    <h5>@Html.Raw(Model.listOfIssuedFiles[cont].register_name)</h5>
+                    <p>@Html.Raw(Model.listOfIssuedFiles[cont].file_description)</p>
+                    <p>@Html.Raw(Model.listOfIssuedFiles[cont].registered_date)</p>
+                    <br />
+                }
+            </div>
+        }
+        else
+        {
+            <div>
+                <p><strong>No has realizado ningún aporte</strong></p>
+            </div>
+        }
+    </div>
+    <div class="panel panel-primary" style="border-color:brown; border-width:1px">
+    <h3>Comentarios del docente</h3>
+        <br />
+        @if (Model.listOfComments.Count>0) {
+        <div>
+            @foreach (VsdrTeacherComment comment in Model.listOfComments)
+            {
+                <br />
+                <h2><strong>@Html.Raw(comment.content)</strong></h2>
+                <p>@Html.Raw(comment.commentDate)</p>
+                <br />
+            }
+        </div>
+        }
+        else
+        {
+            <div>
+                <p><strong>El docente aún no ha comentado tus aportes</strong></p>
+            </div>
+        }
+    </div>
+
+    <div id="AddVSDRFile" class="modal fade" role="dialog">
+        <div class="modal-dialog1">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    @using (Html.BeginForm("UploadVSDRFile", "VSDR", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                    {
+                        @Html.HiddenFor(model => model.actualVsdr.id)
+                        @Html.HiddenFor(model => model.actualVsdr.case_content)
+                        @Html.HiddenFor(model => model.actualVsdr.name)
+                        @Html.HiddenFor(model => model.actualVsdr.end_date)
+                        @Html.HiddenFor(model => model.actualVsdr.start_date)
+                        @Html.HiddenFor(model => model.actualVsdr.resource_url)
+                        @Html.HiddenFor(model => model.actualVsdr.available)
+                        @Html.HiddenFor(model => model.meetingAvailable)
+                        @Html.AntiForgeryToken()
+                        <div class="row">
+                            <br />
+                            <div class="col-md-6">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.LabelFor(model => model.vsdrFileToAdd.register_name, htmlAttributes: new { @class = "control-label col-md-3" })
+                                @Html.EditorFor(model => model.vsdrFileToAdd.register_name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.vsdrFileToAdd.register_name, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-12">
+                                <br />
+                            </div>
+
+                            <div class="col-md-12">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                <div class="col-md-12">
+                                    @Html.TextAreaFor(model => model.vsdrFileToAdd.file_description, 10, 15, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.vsdrFileToAdd.file_description, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.vsdrFileToAdd.file_name, htmlAttributes: new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-10">
+                                    <input type="file" id="CoverpageModule" name="upload" />
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-8">
+                                    <br /><br />
+                                    <center><button class="btn btn-primary" name="singin" type="submit">Crear</button></center>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<br />
+<br />
+<br />

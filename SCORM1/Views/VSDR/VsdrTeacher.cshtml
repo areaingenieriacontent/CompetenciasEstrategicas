@@ -1,0 +1,69 @@
+﻿@using SCORM1.Models.VSDR;
+@using SCORM1.Models.ViewModel;
+@model VsdrUserVM
+@{
+    ViewBag.Title = "VsdrContent";
+}
+
+<h2>@Model.actualVsdr.name</h2>
+<br />
+<br />
+<br />
+<br />
+<div class="row fecha">
+    <div class="btn-group btn-breadcrumb">
+        <a href="@Url.Action("Index", "Home")" class="btn btn-info"><i class="glyphicon glyphicon-home"></i></a>
+        <a href="@Url.Action("VsdrUserListTeacher", "VSDR")" class="btn btn-info">VSDR</a>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:brown; border-width:3px">
+    <br />
+    <p><strong>@Html.Raw(Model.actualVsdr.case_content)</strong></p>
+    <br />
+    <div class="fecha" style="text-align:center">
+        @if (Model.meetingAvailable)
+        {
+            @Html.ActionLink("Ir a la sala", "RedirectToUrl", "VSDR", new { id = @Model.actualVsdr.id }, new { @class = "btn btn-primary", style = "margin: 10px" })
+        }
+        else
+        {
+            @Html.ActionLink("Ir a la sala", "RedirectToUrl", "VSDR", new { id = @Model.actualVsdr.id }, new { @class = "btn btn-primary disabled", style = "margin:10px" })
+        }
+    </div>
+    <br />
+    <br />
+    <div class="panel panel-primary" style="border-color:brown; border-width:1px">
+        <h3>Aportes de estudiantes</h3>
+        @if (Model.listOfIssuedFiles.Count > 0)
+        {
+            <div>
+                @for (int cont = 0; cont < Model.listOfIssuedFiles.Count; cont++)
+                {
+                    <br />
+                    <p>@Html.Raw(Model.listOfIssuedFiles[cont].Enrollment.User.FirstName) @Html.Raw(Model.listOfIssuedFiles[cont].Enrollment.User.LastName)</p>
+                    <p>@Html.Raw(Model.listOfIssuedFiles[cont].register_name)</p>
+                    <p>@Html.Raw(Model.listOfIssuedFiles[cont].file_description)</p>
+                    <p>@Html.Raw(Model.listOfIssuedFiles[cont].registered_date)</p>
+                    <p><a href="~/VSDRUploads/@Model.listOfIssuedFiles[cont].file_name" target="_blank" download="@Model.listOfIssuedFiles[cont].file_name" style="background-color:transparent;color:#f57c00;">Descargar</a></p>
+                    <br />
+                    @Html.ActionLink("Agregar Comentario", "AddCommentView", "VSDR", new { id = Model.listOfIssuedFiles[cont].vsdr_file_id }, new { @class = "btn btn-primary" })
+                    <br />
+                    <br />
+                }
+            </div>
+        }
+        else
+        {
+            <div>
+                <p><strong>No se han realizado aportes</strong></p>
+            </div>
+        }
+    </div>
+
+</div>
+<br />
+<br />
+<br />

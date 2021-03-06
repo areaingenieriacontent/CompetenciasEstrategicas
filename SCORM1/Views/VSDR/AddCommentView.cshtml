@@ -1,0 +1,58 @@
+﻿@using SCORM1.Models.VSDR;
+@using SCORM1.Models.ViewModel;
+@model CommentViewVM
+@{
+    ViewBag.Title = "AddCommentView";
+}
+
+<h2>Agregar Comentario</h2>
+<br />
+<br />
+<br />
+<br />
+<div class="row fecha">
+    <div class="btn-group btn-breadcrumb">
+        <a href="@Url.Action("Index", "Home")" class="btn btn-info"><i class="glyphicon glyphicon-home"></i></a>
+        <a href="@Url.Action("VsdrUserList", "VSDR")" class="btn btn-info">Lista VSDR</a>
+        <a href="@Url.Action("VsdrTeacher", "VSDR", new { id = Model.actualVSDR.id })" class="btn btn-info">VSDR</a>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:brown; border-width:3px">
+    <br />
+    <p><strong>@Html.Raw(Model.actualVSDR.case_content)</strong></p>
+    <br />
+    <br />
+    <div class="panel panel-primary" style="border-color:brown; border-width:1px">
+        @using (Html.BeginForm("AddCommentView", "VSDR", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+        {
+            <br />
+            <div class="col-md-6">
+                @Html.HiddenFor(model => model.actualFile.vsdr_file_id)
+                @Html.HiddenFor(model => model.actualFile.user_id)
+                @Html.HiddenFor(model => model.actualFile.vsdr_id)
+            </div>
+            <div class="col-md-12">
+                <br />
+            </div>
+
+            <div class="col-md-12">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="col-md-12">
+                    @Html.TextAreaFor(model => model.commentToAdd.content, 10, 15, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.commentToAdd.content, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-8">
+                    <br /><br />
+                    <center><button class="btn btn-primary" name="singin" type="submit">Añadir Comentario</button></center>
+                </div>
+            </div>
+        }
+    </div>
+</div>
