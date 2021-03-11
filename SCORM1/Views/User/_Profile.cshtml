@@ -203,12 +203,12 @@
         <!-- TabUser Es El Identificador Que Se Encuentra En El Archivo De Bootstrap Contiene La Posicion De Los Titulos Y Sus Estilos   -->
         <!-- Titulos De Los Botones Del Menu/-->
 
-        <a class="col-md-4 aDiv active" data-toggle="tab" href="#home">ZONA DE APRENDIZAJE INTERACTIVO</a>
-        
+        <a class="col-md-4 aDiv active" data-toggle="tab" href="#home">COMPETENCIAS ESTRATÉGICAS</a>
+        @*
         @if (Model.ComunidadActiva != 0)
         {<a class="col-md-4 aDiv" data-toggle="tab" href="#menu1" >COMUNIDAD SOCIAL DE CONOCIMIENTO</a>
         }
-        
+        *@
         <a class="col-md-4 aDiv" data-toggle="tab" href="#menu2">TABLERO DE CONTROL</a>
         <!-- Fin De Los Titulos/-->
     </div>
@@ -223,7 +223,7 @@
                 <br>
                 <center>
                     <div class="col-md-3 ">
-                        <a href="@Url.Action("ListModuleVirtual", "User")" style="background-color:#fff"><img src="~/Content/Images/ISO450001.png" style="width:150px; height:150px;"><h1>MIS <b>CURSOS</b></h1></a>
+                        <a href="@Url.Action("ListModuleVirtual", "User")" style="background-color:#fff"><img src="~/Content/Images/ISO450001.png" style="width:150px; height:150px;"><h1>FORTALECIMIENTO DE <b>COMPETENCIAS</b></h1></a>
                         <style>
                             h1 {
                                 color: #000;
@@ -231,21 +231,25 @@
                         </style>
 
                     </div>
+
+                    <div class="col-md-3">
+                        <a id="clear" href="../logscomunidad/clicksoftkills" style="background-color:#fff"><img src="~/Content/Images/softkills.png" style="width:150px; height:150px;"></a>
+                    </div>
                     @*<div class="col-md-3">
-                    <a href="@Url.Action("ListModuleVirtual", "User")" style="background-color:#fff"><img src="~/Content/Images/aprendizaje-extendido.png" style="width:150px; height:150px;"><h1>APRENDIZAJE <b>EXTENDIDO</b></h1></a>
-                </div>
-                <div class="col-md-3">
-                    <a href="https://www.aprendeyavanza2.com.co/UnAula/User/ViewArticle/7" style="background-color:#fff">
-                        <img src="~/Content/Images/base-de-datos.png" style="width:150px; height:150px;"><h1>
-                            <b>BASES DE DATOS</b>
-                        </h1>
-                    </a>
-                </div>
+            <a href="@Url.Action("ListModuleVirtual", "User")" style="background-color:#fff"><img src="~/Content/Images/aprendizaje-extendido.png" style="width:150px; height:150px;"><h1>APRENDIZAJE <b>EXTENDIDO</b></h1></a>
+        </div>
+        <div class="col-md-3">
+            <a href="https://www.aprendeyavanza2.com.co/UnAula/User/ViewArticle/7" style="background-color:#fff">
+                <img src="~/Content/Images/base-de-datos.png" style="width:150px; height:150px;"><h1>
+                    <b>BASES DE DATOS</b>
+                </h1>
+            </a>
+        </div>
 
 
-                <div class="col-md-3" style="padding-bottom:20px">
-                    <a href="https://www.aprendeyavanza2.com.co/UnAula/Recursos/pdf_(1).pdf" target="_blank"><img src="~/Content/Images/sistema-de-evaluacion.png" style="width:150px; height:150px;"><h1>SISTEMA  <b>DE EVALUACIÓN</b></h1></a>
-                </div>*@
+        <div class="col-md-3" style="padding-bottom:20px">
+            <a href="https://www.aprendeyavanza2.com.co/UnAula/Recursos/pdf_(1).pdf" target="_blank"><img src="~/Content/Images/sistema-de-evaluacion.png" style="width:150px; height:150px;"><h1>SISTEMA  <b>DE EVALUACIÓN</b></h1></a>
+        </div>*@
                 </center>
             </div>
 
