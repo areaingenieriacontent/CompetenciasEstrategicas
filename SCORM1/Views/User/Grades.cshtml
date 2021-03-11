@@ -805,16 +805,16 @@ else
                                     <br />
 
                                     <!--To-Do Flash Test Link-->
-                                    @foreach (FlashTest flash in Model.flashTests)
+                                    @*@foreach (FlashTest flash in Model.flashTests)
                                     {
                                         if (flash.ToCo_Id == topic1.ToCo_Id)
                                         {
-                                            @*
+                                            
                                             <div class="fecha">
                                                 <a href="@Url.Action("TestUser", "FlashTests", new { Toco_Id = @topic1.ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a test rápido</i></a>
-                                            </div>*@
+                                            </div>
                                         }
-                                    }
+                                    }*@
                                     @if (topic1.Job.Count != 0)
                                     {
                                         <div class="fecha">

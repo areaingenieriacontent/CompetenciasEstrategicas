@@ -1734,8 +1734,8 @@ namespace SCORM1.Controllers
             var AdvanceUser = user.AdvanceUser.Where(x => x.User_Id == user.Id && x.TopicsCourse.Modu_Id == enrollments.Modu_Id).ToList();
             var Attempt = user.Attempts.Where(x => x.UserId == user.Id && x.BankQuestion.TopicsCourse.Modu_Id == enrollments.Modu_Id).ToList();
             var listenrollments = enrollments.Module.TopicsCourse.Where(x => x.Modu_Id == id && x.ToCo_Visible == FORO.Si).OrderBy(x => x.ToCo_Id).ToList();
-            var listCompletedFlashTests = ApplicationDbContext.UserModuleAdvances.Where(x => x.Enro_id == enrollments.Enro_Id).ToList();
-            var flashtestloaded = ApplicationDbContext.FlashTest.Where(x => x.TopicsCourse.Modu_Id == enrollments.Modu_Id).ToList();
+            //var listCompletedFlashTests = ApplicationDbContext.UserModuleAdvances.Where(x => x.Enro_id == enrollments.Enro_Id).ToList();
+            //var flashtestloaded = ApplicationDbContext.FlashTest.Where(x => x.TopicsCourse.Modu_Id == enrollments.Modu_Id).ToList();
             UserGeneralViewModel model = new UserGeneralViewModel
             {
                 ActualRole = GetActualUserId().Role,
@@ -1745,8 +1745,8 @@ namespace SCORM1.Controllers
                 listadvanceuser = AdvanceUser,
                 baseUrl = url,
                 listenrollment = listenrollments,
-                userFlashTestResults = listCompletedFlashTests,
-                flashTests = flashtestloaded,
+                //userFlashTestResults = listCompletedFlashTests,
+                //flashTests = flashtestloaded,
                 Modules = mod
             };
             model.Sesion = GetActualUserId().SesionUser;
