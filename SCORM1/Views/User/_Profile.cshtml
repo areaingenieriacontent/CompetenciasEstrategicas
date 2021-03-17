@@ -203,7 +203,7 @@
         <!-- TabUser Es El Identificador Que Se Encuentra En El Archivo De Bootstrap Contiene La Posicion De Los Titulos Y Sus Estilos   -->
         <!-- Titulos De Los Botones Del Menu/-->
 
-        <a class="col-md-4 aDiv active" data-toggle="tab" href="#home">COMPETENCIAS ESTRATÉGICAS</a>
+        <a class="col-md-12 aDiv active" data-toggle="tab" href="#home" style="text-align:center;">COMPETENCIAS ESTRATÉGICAS</a>
         @*
         @if (Model.ComunidadActiva != 0)
         {<a class="col-md-4 aDiv" data-toggle="tab" href="#menu1" >COMUNIDAD SOCIAL DE CONOCIMIENTO</a>
@@ -224,12 +224,12 @@
                 <center>
 
                     <!--DCO-->
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <a id="clear" href="../logscomunidad/clicksoftkills" style="background-color:#fff"><img src="~/Content/Images/softkills.png" style="width:150px; height:150px;"></a>
                     </div>
 
                     <!--Lista de cursos-->
-                    <div class="col-md-3 ">
+                    <div class="col-md-4 ">
                         <a href="@Url.Action("ListModuleVirtual", "User")" style="background-color:#fff"><img src="~/Content/Images/ISO450001.png" style="width:150px; height:150px;"><h1>FORTALECIMIENTO DE <b>COMPETENCIAS</b></h1></a>
                         <style>
                             h1 {
@@ -240,7 +240,7 @@
                     </div>
 
                     <!--Calificaciones-->
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <a href="@Url.Action("VistaAvances", "User")" style="background-color:#fff"><img src="~/Content/Images/libro-calificaciones.png" style="width:100px; height:100px;"><h1>MIS <b>AVANCES</b></h1></a>
                     </div>
                     @*<div class="col-md-3">

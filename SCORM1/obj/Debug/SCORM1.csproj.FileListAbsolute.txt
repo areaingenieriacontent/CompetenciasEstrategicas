@@ -3215,7 +3215,6 @@ C:\Inetpub\wwwroot\Plataforma Score Competencias Estrategicas\CompetenciasEstrat
 C:\Inetpub\wwwroot\Plataforma Score Competencias Estrategicas\CompetenciasEstrategicas\SCORM1\bin\es\Microsoft.Owin.Security.Google.resources.dll
 C:\Inetpub\wwwroot\Plataforma Score Competencias Estrategicas\CompetenciasEstrategicas\SCORM1\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Inetpub\wwwroot\Plataforma Score Competencias Estrategicas\CompetenciasEstrategicas\SCORM1\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-C:\Inetpub\wwwroot\Plataforma Score Competencias Estrategicas\CompetenciasEstrategicas\SCORM1\obj\Debug\SCORM1.csprojAssemblyReference.cache
 C:\Inetpub\wwwroot\Plataforma Score Competencias Estrategicas\CompetenciasEstrategicas\SCORM1\obj\Debug\SCORM1.Migrations.initial.resources
 C:\Inetpub\wwwroot\Plataforma Score Competencias Estrategicas\CompetenciasEstrategicas\SCORM1\obj\Debug\SCORM1.Migrations.vsdr.resources
 C:\Inetpub\wwwroot\Plataforma Score Competencias Estrategicas\CompetenciasEstrategicas\SCORM1\obj\Debug\SCORM1.csproj.GenerateResource.cache

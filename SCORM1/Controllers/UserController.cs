@@ -2227,14 +2227,16 @@ namespace SCORM1.Controllers
         {
 
             TopicsCourse topic = ApplicationDbContext.TopicsCourses.Find(id);
-            var bankquestioid = topic.BankQuestion.Where(x => x.ToCo_Id == topic.ToCo_Id).ToDictionary(x => x.BaQu_Id);
-            int idbank = bankquestioid.Select(X => X.Value.BaQu_Id).Single();
-            BankQuestion actualbank = ApplicationDbContext.BankQuestions.Find(idbank);
+            var bankquestioid = topic.BankQuestion.Where(x => x.ToCo_Id == topic.ToCo_Id).FirstOrDefault().BaQu_Id;
+            //var bankquestioid = topic.BankQuestion.Where(x => x.ToCo_Id == topic.ToCo_Id).ToDictionary(x => x.BaQu_Id);
+            //int idbank = bankquestioid.Select(X => X.Value.BaQu_Id).Single();
+            BankQuestion actualbank = ApplicationDbContext.BankQuestions.Find(bankquestioid);
 
             ApplicationUser UserActual = GetActualUserId();
             AdvanceUser userAdva = ApplicationDbContext.AdvanceUsers.Where(z => z.ToCo_id == id && z.User_Id == UserActual.Id).FirstOrDefault();
             var usuario = User.Identity.GetUserId();
-            var Attempt = ApplicationDbContext.Attempts.Where(x => x.UserId == usuario && x.BankQuestion.TopicsCourse.ToCo_Id == topic.ToCo_Id).ToList();
+            //var Attempt = ApplicationDbContext.Attempts.Where(x => x.UserId == usuario && x.BankQuestion.TopicsCourse.ToCo_Id == topic.ToCo_Id).ToList();
+            var Attempt = ApplicationDbContext.Attempts.Where(x => x.UserId == usuario && x.BaQu_Id == bankquestioid).ToList();
 
             if (topic.ToCo_Attempt <= Attempt.Count)
             {
