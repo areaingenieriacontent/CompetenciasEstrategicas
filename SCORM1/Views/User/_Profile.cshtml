@@ -208,8 +208,8 @@
         @if (Model.ComunidadActiva != 0)
         {<a class="col-md-4 aDiv" data-toggle="tab" href="#menu1" >COMUNIDAD SOCIAL DE CONOCIMIENTO</a>
         }
-        *@
-        <a class="col-md-4 aDiv" data-toggle="tab" href="#menu2">TABLERO DE CONTROL</a>
+
+        <a class="col-md-4 aDiv" data-toggle="tab" href="#menu2">TABLERO DE CONTROL</a>*@
         <!-- Fin De Los Titulos/-->
     </div>
     <div class="container" style="border-style:solid;border-color: #c91f2d; width:100%; margin-bottom:50px">
@@ -222,6 +222,13 @@
                 <br>
                 <br>
                 <center>
+
+                    <!--DCO-->
+                    <div class="col-md-3">
+                        <a id="clear" href="../logscomunidad/clicksoftkills" style="background-color:#fff"><img src="~/Content/Images/softkills.png" style="width:150px; height:150px;"></a>
+                    </div>
+
+                    <!--Lista de cursos-->
                     <div class="col-md-3 ">
                         <a href="@Url.Action("ListModuleVirtual", "User")" style="background-color:#fff"><img src="~/Content/Images/ISO450001.png" style="width:150px; height:150px;"><h1>FORTALECIMIENTO DE <b>COMPETENCIAS</b></h1></a>
                         <style>
@@ -232,8 +239,9 @@
 
                     </div>
 
+                    <!--Calificaciones-->
                     <div class="col-md-3">
-                        <a id="clear" href="../logscomunidad/clicksoftkills" style="background-color:#fff"><img src="~/Content/Images/softkills.png" style="width:150px; height:150px;"></a>
+                        <a href="@Url.Action("VistaAvances", "User")" style="background-color:#fff"><img src="~/Content/Images/libro-calificaciones.png" style="width:100px; height:100px;"><h1>MIS <b>AVANCES</b></h1></a>
                     </div>
                     @*<div class="col-md-3">
             <a href="@Url.Action("ListModuleVirtual", "User")" style="background-color:#fff"><img src="~/Content/Images/aprendizaje-extendido.png" style="width:150px; height:150px;"><h1>APRENDIZAJE <b>EXTENDIDO</b></h1></a>
@@ -435,7 +443,7 @@ iv class="modal-body">
       function eliminarCookies() {
           document.cookie.split(";").forEach(function (c) {
               document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-              window.location.assign("https://aprendeyavanza2.com.co/DCOBureau/Account/Login?id="@ViewData["Usuario"]);
+              window.location.assign("https://aprendeyavanza2.com.co/DCOCompetenciasE/Account/Login?id="@ViewData["Usuario"]);
 
         });
       }
