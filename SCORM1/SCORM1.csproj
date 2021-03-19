@@ -507,7 +507,7 @@
     <Content Include="Content\Images\contenido-malla.png" />
     <Content Include="Content\Images\DECISIONESDEVIDA.mp4" />
     <Content Include="Content\Images\fondomesadeservicio.jpg" />
-    <Content Include="Content\Images\fondo_mesa.jpg" />
+    <Content Include="Content\Images\fondo_mesa.png" />
     <Content Include="Content\Images\gestion_categorias.png" />
     <Content Include="Content\Images\gestion_puntos_individuales.png" />
     <Content Include="Content\Images\gestion_puntos_masivos.png" />

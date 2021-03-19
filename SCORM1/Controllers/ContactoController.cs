@@ -27,8 +27,8 @@ namespace SCORM1.Controllers
         {
             ApplicationDb = new ApplicationDbContext();
             MailMessage correo = new MailMessage();
-            correo.From = new MailAddress("info@bvtrainingcommunity.com");
-            correo.To.Add("bureauveritassoporte@gmail.com");
+            correo.From = new MailAddress("competenciasestrategicas@sanmateo.edu.co");
+            correo.To.Add("competenciasestrategicas@sanmateo.edu.co");
             correo.Subject = categoria + identificacion;
             string caso = "El usuario " + nombres + " identicado con el numero " + identificacion + " genero un nuevo caso de soporte: ";
             correo.Body = caso + descripcion;
@@ -36,7 +36,6 @@ namespace SCORM1.Controllers
             correo.Priority = MailPriority.Normal;
             //
             var smtp = new SmtpClient();
-        
             smtp.Send(correo);
             int count = ApplicationDb.Correos.ToList().Count();
             CorreoModel correoDB;
@@ -81,7 +80,7 @@ namespace SCORM1.Controllers
         {
             ApplicationDb = new ApplicationDbContext();
             MailMessage correo = new MailMessage();
-            correo.From = new MailAddress("info@bvtrainingcommunity.com");
+            correo.From = new MailAddress("competenciasestrategicas@sanmateo.edu.co");
             correo.To.Add(correos);
             correo.Subject = "Inquietud a la mesa de servicio Competencias Estratégicas";
             string caso = "Acabamos de recibir tu mensaje. Nuestro equipo de trabajo analizará tu solicitud para determinar el nivel de complejidad."+'\n'+
