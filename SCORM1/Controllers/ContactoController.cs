@@ -31,8 +31,33 @@ namespace SCORM1.Controllers
             correo.To.Add("competenciasestrategicas@sanmateo.edu.co");
             correo.Subject = categoria + identificacion;
             string caso = "El usuario " + nombres + " identicado con el numero " + identificacion + " genero un nuevo caso de soporte: ";
-            correo.Body = caso + descripcion;
-            correo.IsBodyHtml = false;
+            string casoPrueba = "<div id='cuerpo'>" +
+        "<div id='nombre'>" +
+            "Nombre del estudiante si es de dos renglones" +
+        "</div>" +
+
+        "<a href='#' target='_blank'>" +
+            "<div id='guia'>" +
+            "GUÍA DE NAVEGACIÓN" +
+                "<div id='clic'>Dando clic aquí</div>" +
+            "/div>" +
+        "</a>" +
+
+        "<div id='contacto'>" +
+            "competenciasestrategicas@sanmateo.edu.co" +
+            "<br>" +
+            "(+57) 300 6651 560" +
+        "</div>" +
+
+        "<a href='#' target='_blank'>" +
+            "<div id='plataforma'>" +
+            "Ingresa Aquí" +
+            "</div>" +
+        "</a>" +
+
+    "</div>";
+            correo.Body = casoPrueba;// + descripcion;
+            correo.IsBodyHtml = true;
             correo.Priority = MailPriority.Normal;
             //
             var smtp = new SmtpClient();
@@ -85,8 +110,33 @@ namespace SCORM1.Controllers
             correo.Subject = "Inquietud a la mesa de servicio Competencias Estratégicas";
             string caso = "Acabamos de recibir tu mensaje. Nuestro equipo de trabajo analizará tu solicitud para determinar el nivel de complejidad."+'\n'+
                 "Te estaremos informando en máximo 3 horas al correo registrado el tiempo de repuesta asignado.";
+            string casoPrueba = "	<div id='cuerpo'>" +
+        "<div id='nombre'>" +
+            "Nombre del estudiante si es de dos renglones" +
+        "</div>" +
+
+        "<a href='#' target='_blank'>" +
+            "<div id='guia'>" +
+            "GUÍA DE NAVEGACIÓN" +
+                "div id='clic'>Dando clic aquí</div>" +
+            "/div>" +
+        "</a>" +
+
+        "<div id='contacto'>" +
+            "competenciasestrategicas@sanmateo.edu.co" +
+            "<br>" +
+            "(+57) 300 6651 560" +
+        "</div>" +
+
+        "<a href='#' target='_blank'>" +
+            "<div id='plataforma'>" +
+            "Ingresa Aquí" +
+            "</div>" +
+        "</a>" +
+
+    "</div>";
             correo.Body = caso;
-            correo.IsBodyHtml = false;
+            correo.IsBodyHtml = true;
             correo.Priority = MailPriority.Normal;
             //
             var smtp = new SmtpClient();

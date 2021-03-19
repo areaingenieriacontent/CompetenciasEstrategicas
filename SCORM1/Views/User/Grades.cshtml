@@ -355,7 +355,7 @@ else
                     }
                     @*<li class="active"><a data-toggle="tab" href="#@Model.listenrollment[0].ToCo_Id" style="font-size:20px;">@Model.listenrollment[0].ToCo_Name</a></li>*@
 
-                    @*Parte de curso rigido, revisar y replicar en otras partes que que tienen mejora y buena practica*@
+                    @*Parte de curso rigido, revisar y replicar en otras partes que tienen mejora y buena practica*@
                     @foreach (TopicsCourse topic in Model.Enrollment.Module.TopicsCourse.OrderBy(x => x.ToCo_Id).Where(x => x.ToCo_Visible == FORO.Si))
                     {
                         @*Agregar condición si el tema tiene predecesor y si ya cumplio la evaluación, siempre y cuando sea curso rígido*@
@@ -643,7 +643,7 @@ else
                                                 if (item1.Attempts.Where(x => x.BaQu_Id == item1.BaQu_Id && x.UserId == Model.user.Id).Count() < item1.BaQu_Attempts)
                                                 {
                                                     var a = item1.Attempts.Where(x => x.BaQu_Id == item1.BaQu_Id && x.UserId == Model.user.Id).Count();
-                                                    //<h4 class="fecha"><strong> Llevas  @a intentos</strong></h4><br />
+                                                    <h4 class="fecha"><strong> Llevas  @a intentos</strong></h4><br />
                                                     if (Model.Enrollment.Enro_FinishDateModule <= DateTime.Now)
                                                     {
 
@@ -654,14 +654,14 @@ else
                                                     //Se comento la opcion donde aparece el enlace de la evaluacion
                                                     else
                                                     {
-                                                        //<div class="fecha">
-                                                        //<a href="@Url.Action("TestUser", "User", new { id = @Model.listenrollment[0].ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a Evaluación</i></a>
-                                                        //</div>
+                                                        <div class="fecha">
+                                                        <a href="@Url.Action("TestUser", "User", new { id = @Model.listenrollment[0].ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a Evaluación</i></a>
+                                                        </div>
                                                     }
                                                 }
                                                 else
                                                 {
-                                                    //<h4 class="fecha"> <strong> Ya no tiene intentos disponibles</strong></h4>
+                                                    <h4 class="fecha"> <strong> Ya no tiene intentos disponibles</strong></h4>
                                                 }
                                             }
                                         }
@@ -790,9 +790,9 @@ else
                                 @Html.ActionLink("Contactar al Administrador", "EmailAttempts", "User", new { BaQu_Id = item1.BaQu_Id }, new { @class = "btn btn-primary" })
                             </p>*@
 
-                                                        <p class="fecha">
+                                                        @*<p class="fecha">
                                                             @Html.ActionLink("Resultado test", "ResulQuestions", "User", new { BaQu_Id = item1.BaQu_Id }, new { @class = "btn btn-primary" })
-                                                        </p>
+                                                        </p>*@
                                                     }
                                                 }
                                             }

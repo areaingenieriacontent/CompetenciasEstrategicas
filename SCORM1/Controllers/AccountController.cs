@@ -243,7 +243,7 @@ namespace SCORM1.Controllers
                            "<br/>" +
                            "<br/>" + "El correo del usuario es el siguiente " + model.Form_Email +
                            "<br/>" +
-                           "<br/>" + "Equipo de Soporte UnAula";
+                           "<br/>" + "Equipo de Soporte Competencias Estratégicas";
 
                         solicitudes.To.Add(item.ApplicationUser.Email);
                         solicitudes.IsBodyHtml = true;
@@ -528,8 +528,7 @@ namespace SCORM1.Controllers
                "<br/>" + "Link de ingreso a la plataforma: " +
             "<br/>" + "https://www.aprendeyavanza2.com.co/CompetenciasEstrategicas/" +
             "" + "<br/>" +
-               "<br/>" + "Competencias Estratégicas" +
-               "<br/>" + "Construyendo Confianza";
+               "<br/>" + "Competencias Estratégicas";
             solicitud.To.Add(Email);
             solicitud.IsBodyHtml = true;
             var smtp2 = new SmtpClient();
