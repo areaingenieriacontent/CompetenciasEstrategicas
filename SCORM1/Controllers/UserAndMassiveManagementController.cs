@@ -1631,7 +1631,35 @@ namespace SCORM1.Controllers
             {
                 MailMessage solicitud = new MailMessage();
                 solicitud.Subject = "Bienvenida a la plataforma de capacitación de Competencias Estratégicas";
-                solicitud.Body = "Cordial saludo, " + "<br/>" + "<br/>" +
+
+                string casoPrueba =
+                        "<body style='margin: 0 auto; padding: 0 auto;'>" +
+                            "<div style='background:url(https://aprendeyavanza2.com.co/contentgroup/competenciasestrategicas/email_templates/welcome/mail.png); background-repeat: no-repeat; background-position: top center; width: 700px; height: 1560px; margin: 0 auto; padding: 0 auto;'>" +
+                                "<div style='width:390px;float:right;margin:227px 20px 0 0;line-height:34px;font-size:35px;text-align:right;color:#FFF;letter-spacing:-1px;font-weight:700;'>" +
+                                    NameUser +
+                                "</div>" +
+                                "<a href='https://aprendeyavanza2.com.co/contentgroup/competenciasestrategicas/Guia_navegacion_competencias_estrategias.pdf' target='_blank'>" +
+                                    "<div style='width:370px;float:right;margin:370px 26px 0 0;font-size:32px;text-align:center;color:#ed2d4e;letter-spacing:-2px;font-weight:700;'>" +
+                                    "GUÍA DE NAVEGACIÓN" +
+                                        "<div style='width:370px;float:right;margin-top:-5px;font-size:16px;text-align:center;color:#323232;font-weight:700;'>Dando clic aquí</div>" +
+                                    "</div>" +
+                                "</a>" +
+                                "<div style='width:480px;float:right;margin:260px 20px 0 0;line-height:34px;font-size:22px;text-align:right;color:#163056;letter-spacing:-1px;font-weight:700;'>" +
+                                    "competenciasestrategicas@sanmateo.edu.co" +
+                                    "<br>" +
+                                    "(+57) 300 6651 560" +
+                                "</div>" +
+                                "<a href='https://aprendeyavanza2.com.co/competenciasestrategicas' target='_blank'>" +
+                                    "<div style='width: 170px;float: right;clear: both;margin: 224px 50px 0 0;line-height: 46px;font-size: 46px;text-align: left;color: #163056;letter-spacing: -1px;font-weight: 700;'>" +
+                                    "Ingresa Aquí" +
+                                    "</div>" +
+                                "</a>" +
+                            "</div>" +
+                        "</body>";
+
+                solicitud.Body = casoPrueba;
+                    
+                    string mailAnterior = "Cordial saludo, " + "<br/>" + "<br/>" +
                     "Respetado Sr(a). " + NameUser +
                    "<br/>" + "Es un gusto darle la bienvenida a la plataforma de capacitación de Competencias Estratégicas." +
                    "<br/>" + "Agradecemos ingresar y comenzar con su experiencia de aprendizaje con los siguientes datos de acceso:" + "<br/>" +

@@ -56,7 +56,7 @@ namespace SCORM1.Controllers
         "</a>" +
 
     "</div>";
-            correo.Body = casoPrueba;// + descripcion;
+            correo.Body = caso + descripcion;
             correo.IsBodyHtml = true;
             correo.Priority = MailPriority.Normal;
             //
