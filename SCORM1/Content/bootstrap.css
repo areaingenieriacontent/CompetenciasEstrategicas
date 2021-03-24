@@ -11217,6 +11217,24 @@ button[type=secciones-newspaper] {
         clear: both;
     }
 
+.comentario2 {
+    width: 100%;
+    margin: 10px auto;
+    clear: both;
+    border: rgba(0,124,137,1.00) solid;
+    border-width: 1px;
+    padding: 5px;
+}
+
+    .comentario p {
+        width: 95%;
+        margin: 5px auto;
+        font-size: 14px;
+        font-weight: 300;
+        text-align: left;
+        clear: both;
+    }
+
 .nuevo-comentario {
     width: 95%;
     margin: 0 auto;

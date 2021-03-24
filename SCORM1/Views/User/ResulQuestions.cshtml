@@ -251,12 +251,11 @@ else
                                             if (answeroptionmultiple.OptionMultiple.OpMu_Id == option.OpMu_Id)
                                             {
                                                 <div class="comentario">
-
                                                     <p>
                                                         <h4 class="fecha">Respuesta del Estudiante:</h4>
                                                     </p>
                                                     <p><strong>@Html.Raw(answeroptionmultiple.AnOp_OptionAnswer)</strong></p>
-                                                    @*<p><em>@answeroptionmultiple.AnOp_TrueAnswer</em></p>*@
+                                                    <p><em>@answeroptionmultiple.AnOp_TrueAnswer</em></p>
                                                     <p><strong>@Html.Raw(answeroptionmultiple.Answer_OpMult_Content)</strong></p>
                                                 </div>
                                                 <br />
@@ -265,9 +264,8 @@ else
                                                 break;
                                             }
                                         }
-
-
                                     }
+
                                     @foreach (AnswerOptionMultiple answeroptionmultiple2 in option.AnswerOptionMultiple)
                                     {
                                         if (answeroptionmultiple2.OptionMultiple.OpMu_Id == option.OpMu_Id)
@@ -279,11 +277,6 @@ else
                                                 <p><strong>@Html.Raw(answeroptionmultiple2.AnOp_OptionAnswer)</strong></p>
                                                 @*<p><em>@answeroptionmultiple2.AnOp_TrueAnswer</em></p>*@
                                                 @*<p><strong>@Html.Raw(answeroptionmultiple2.Answer_OpMult_Content)</strong></p>*@
-
-
-
-
-
                                             </div>
                                             <br />
                                         }
@@ -319,7 +312,6 @@ else
                             using (Html.BeginForm("AddPairing", "AdminTraining", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
                             {
                                 @Html.AntiForgeryToken()
-
                             }
                         }
                         else
@@ -332,7 +324,7 @@ else
                             {
                                 <br />
                                 <br /><br /><br />
-                                <div class="comentario">
+                                <div class="comentario2">
 
 
                                     <p><strong>@option.Pair_Question</strong></p>
@@ -415,19 +407,19 @@ else
 
 
 
-                            <center><p><h4>Respuesta Correcta </h4></p></center>
+                            //<center><p><h4>Respuesta Correcta </h4></p></center>
                             foreach (TrueOrFalse TrueOrFalseStudent in Model.BankQuestion.TrueOrFalse.OrderByDescending(x => x.TrFa_Id))
                             {
 
-                                <div class="comentario">
+                                @*<div class="comentario">
 
                                     <p>
                                         <h4 class="fecha">Pregunta</h4>
                                     </p>
                                     <p><strong>@TrueOrFalseStudent.TrFa_Question</strong></p>
                                     <p><em>@TrueOrFalseStudent.TrFa_Description</em></p>
-                                    @*<p><em>Respuesta : @TrueOrFalseStudent.TrFa_State</em></p>*@
-                                </div>
+                                    <p><em>Respuesta : @TrueOrFalseStudent.TrFa_State</em></p>
+                                </div>*@
 
 
                                 foreach (TrueOrFalseStudent TrueOrFalseStudent1 in Model.BankQuestion.TrueOrFalseStudent.OrderByDescending(x => x.TrFa_Id))
@@ -437,14 +429,12 @@ else
                                         if (TrueOrFalseStudent1.TrFa_Question == TrueOrFalseStudent.TrFa_Question)
                                         {
                                             <div class="comentario">
-
                                                 <p>
                                                     <h4 class="fecha">Respuesta Estudiante:</h4>
                                                 </p>
                                                 <p><strong>@TrueOrFalseStudent1.TrFa_Question</strong></p>
                                                 <p><em>@TrueOrFalseStudent1.TrFa_Description</em></p>
                                                 <p><em>Respuesta : @TrueOrFalseStudent1.TrFa_State</em></p>
-
                                             </div>
                                             break;
                                         }

@@ -13,10 +13,7 @@
         <h3>Estimado(a) estudiante @Model.UserLog Usted ya ha realizado el cuestionario</h3>
         <h4>
             su nota correspondiente es @Model.pointsObtained de 100%
-
         </h4>
-      
-
 
     </div>
 
@@ -25,8 +22,6 @@
      window.history.forward(1);
 
     </script>
-
-
 }
 else
 {
@@ -59,7 +54,6 @@ else
                 </div>
                 <br /><br />
 
-
                 @if (Model.Listgeneralquestion.Count == 0)
                 {
 
@@ -81,18 +75,13 @@ else
                                     @Html.HiddenFor(model => model.Listgeneralquestion[i].OpMu_Description)
                                     @*@Html.Raw(Model.Listgeneralquestion[i].OpMu_Description)*@
 
-
-
-
                                     @Html.HiddenFor(model => model.Listgeneralquestion[i].TypeQuestion)
-                                    <div class="comentario">
+                                    <div class="comentario2">
                                         <br />
                                         <p><strong>Pregunta: @Model.Listgeneralquestion[i].OpMu_Question</strong></p>
                                         <br />
                                         <p><strong>Descripción: @Model.Listgeneralquestion[i].OpMu_Description</strong></p>
                                         <p><strong>@Html.Raw(Model.Listgeneralquestion[i].OpMult_Content)</strong></p>
-
-
                                         <br />
 
                                         @foreach (AnswerOptionMultiple answeroptionmultiple in Model.Listgeneralquestion[i].listanswerOM)
@@ -130,7 +119,7 @@ else
                                     @Html.HiddenFor(model => model.Listgeneralquestion[i].Pair_Description)
                                     @Html.HiddenFor(model => model.Listgeneralquestion[i].TypeQuestion)
                                     <br />
-                                    <div class="comentario">
+                                    <div class="comentario2">
                                         <br />
                                         <p><strong>Pregunta: @Model.Listgeneralquestion[i].Pair_Question</strong></p>
                                         <br />
@@ -173,7 +162,7 @@ else
                                     @Html.HiddenFor(model => model.Listgeneralquestion[i].TrFa_State)
                                     @Html.HiddenFor(model => model.Listgeneralquestion[i].TypeQuestion)
                                     <br />
-                                    <div class="comentario">
+                                    <div class="comentario2">
                                         <br />
                                         <p><strong>Pregunta: @Model.Listgeneralquestion[i].TrFa_Question</strong></p>
                                         <br />
@@ -201,7 +190,6 @@ else
                         }
                         else
                         {
-
                         }
 
                     }
